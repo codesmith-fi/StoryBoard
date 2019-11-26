@@ -12,9 +12,8 @@
 #include "Storyboard.h"
 
 namespace codesmith {
-
-class FancyBoardUI
-{
+	class FancyBoardUI
+	{
 	public: // Construct/desctruct
 		/**
 		 * Default constructor
@@ -30,8 +29,7 @@ class FancyBoardUI
 
 	private:
 		Storyboard stories;
-}; // FancyBoardUI
-
+	}; // FancyBoardUI
 } // Namespace codesmith
 
 #endif // FANCYBOARDUI_DEFINED_H

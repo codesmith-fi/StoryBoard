@@ -11,13 +11,12 @@
 #include <string>
 
 namespace codesmith {
-
-/**
- * Simple "unit" test for Storyboard project classes
- * This runner class is a singleton and contains operations to run tests cases
- * and get the success and failure counts after running
- */
-class StoryboardTester {
+	/**
+	 * Simple "unit" test for Storyboard project classes
+	 * This runner class is a singleton and contains operations to run tests cases
+	 * and get the success and failure counts after running
+	 */
+	class StoryboardTester {
 	public: // Singleton accessor
 		static StoryboardTester& instance() {
 			static StoryboardTester tester;
@@ -59,9 +58,7 @@ class StoryboardTester {
 	private: // Data
 		int m_testFailCount;
 		int m_testSuccessCount;
-};
-
-
+	};
 } /* namespace codesmith */
 
 #endif /* STORYBOARDTESTER_H_ */

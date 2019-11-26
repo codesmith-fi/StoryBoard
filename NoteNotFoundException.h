@@ -11,15 +11,13 @@
 #include <exception>
 
 namespace codesmith {
-
-class NoteNotFoundException: public std::exception
-{
-	virtual const char* what() const throw()
+	class NoteNotFoundException : public std::exception
 	{
-		return "Note does not exist exception";
-	}
-}; // NoteNotFoundException
-
+		virtual const char* what() const throw()
+		{
+			return "Note does not exist exception";
+		}
+	}; // NoteNotFoundException
 } // namespace codesmith
 
 #endif /* NOTEDOESNOTEXISTEXCEPTION_H_ */

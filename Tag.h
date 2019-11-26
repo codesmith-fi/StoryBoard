@@ -11,9 +11,8 @@
 #include <string>
 
 namespace codesmith {
-
-class Tag
-{
+	class Tag
+	{
 	public: // Construct/desctruct
 		/**
 		 * Default constructor, fails always
@@ -38,8 +37,7 @@ class Tag
 	private:
 		// Name of the tag
 		std::string m_name;
-}; // Tag
-
+	}; // Tag
 } // Namespace codesmith
 
 #endif // TAG_DEFINED_H
