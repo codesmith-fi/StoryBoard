@@ -14,13 +14,13 @@
 #include "Tag.h"
 
 namespace codesmith {
-class Storyboard
-{
+	class Storyboard
+	{
 	public: // Construct/desctruct
 		/**
 		 * Default constructor
 		 */
-		Storyboard() : m_stories() { };
+		Storyboard() : m_stories(), m_lastNoteId(-1) { };
 
 		// Desctructor
 		virtual ~Storyboard() { };
@@ -76,6 +76,8 @@ class Storyboard
 		 * Search a note by given title (exact match)
 		 * @param title Title of a note to be searched
 		 * @return vector of notes matching the given criteria
+		 * @note Returns copies in a vector, this can be hugely improved by returning
+		 *		list of references instead copies of Notes in a vector
 		 */
 		std::vector<Note> searchByTitle(const std::string& title) const;
 
@@ -83,6 +85,8 @@ class Storyboard
 		 * Search a note by given description (exact match)
 		 * @param description Description of a note to be searched
 		 * @return vector of notes matching the given criteria
+		 * @note Returns copies in a vector, this can be hugely improved by returning
+		 *		list of references instead copies of Notes in a vector
 		 */
 		std::vector<Note> searchByDescription(const std::string& description) const;
 
@@ -90,6 +94,8 @@ class Storyboard
 		 * Search a note having one given Tag
 		 * @param Tag Tag which is to be searched
 		 * @return vector of notes having the tag
+		 * @note Returns copies in a vector, this can be hugely improved by returning
+		 *		list of references instead copies of Notes in a vector
 		 */
 		std::vector<Note> searchByTag(const Tag& tag) const;
 
@@ -97,18 +103,20 @@ class Storyboard
 		 * Search a note having all of the given tags
 		 * @param Tag Vector of tags to be matched
 		 * @return vector of notes having all given tags
+		 * @note Returns copies in a vector, this can be hugely improved by returning
+		 *		list of references instead copies of Notes in a vector
 		 */
 		std::vector<Note> searchByTags(const std::vector<Tag> tags) const;
 
 	private: // Methods
-		int generateUniqueId() const;
+		int generateUniqueId();
 		std::vector<Note>::iterator getNoteIterById(int id);
 
 	private:
 		// List of stories contained in this storyboard
 		std::vector<Note> m_stories;
-}; // Storyboard
-
+		int m_lastNoteId;
+	}; // Storyboard
 } // Namespace codesmith
 
 #endif // STORYBOARD_DEFINED_H
