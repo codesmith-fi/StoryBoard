@@ -1,0 +1,36 @@
+Author: Erno Pakarinen (erpakari@gmail.com)
+
+Simple ticketing system datastructure with unit tests using my own simple 
+"framework" for testing which was implemented as a part of this assignment.
+
+UML Class/Model design can be found in doc/01_Design.xmi (also screeshot 
+is provided).
+It has been made using Umbrello open source UML Modeler software which 
+is available for Linux and Windows atleast.
+
+This was programmed under linux (Ubuntu 19.10) using GCC and Eclipse.
+
+Class descriptions:
+Tag
+    Encapsulates data and operations for a Tag which can be added to 
+    Note instances. 
+Note
+    Encapsulates data and operations for a Note (ticket/story). Has 
+    a title, description and a list of tags. 
+Storyboard
+    A storyboard model which can have one or more stories. Stories can be
+    edited, fetched by id, searched (By Title, Description, Tags)
+NoteNotFoundException
+    Exception class for search operations in storyboard
+DebugLogger
+    A simple stdout/cerr debuglogger used in unit tests simple usage
+    LOG_WARN() << "message"
+StoryboardTester
+    Unit test class, does not use any unit testing framework, I made a short
+    and simple skeleton for this project purpose
+
+FancyBoardUI
+    Not implemented
+main
+    Just executes the unit tests for all model classes
+
